@@ -1,0 +1,41 @@
+
+.teamContainer {
+    text-align: center;
+    width: 300px;
+}
+
+.teamName {
+    background-color: rgb(245, 159, 47);
+    padding-bottom: 0px;
+    height: 50px;
+    margin-top: -50px;
+    font-size: 43px;
+    text-shadow: 0px 3px 5px rgba(0, 0, 0, 0.25);
+}
+
+.teamAvatar {
+    width: 100%;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+}
+
+.teamAvatar img {
+    display: block;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+
+}
+
+.scoreInput {
+    border: 4px solid white;
+    border-radius: 20px;
+    font-size: 90px;
+    padding: 20px;
+    -webkit-box-shadow: 0px 0px 24px -7px rgba(255, 255, 255, 1);
+    -moz-box-shadow: 0px 0px 24px -7px rgba(255, 255, 255, 1);
+    box-shadow: 0px 0px 24px -7px rgba(255, 255, 255, 1);
+    text-shadow: 0px 3px 5px rgba(0, 0, 0, 0.25);
+    -webkit-text-stroke: 1px #EE8202; /* width and color */
+}
