@@ -1,6 +1,7 @@
 body {
   background-image: url('bg.png');
   background-size: cover;
+  background-repeat: no-repeat;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -12,6 +13,38 @@ body {
   flex-direction: column;
   justify-content: space-around;
   margin: auto;
+  height: 100%;
+
+}
+
+.nextQuestionButton {
+  cursor: pointer;
+  width: 100px;
+  height: 100px;
+  position: fixed;
+  font-size: 60px;
+  border-radius: 15px;
+  margin: 100px;
+  bottom: 0;
+  right: 0;
+  color: white;
+  border: 3px solid rgb(255, 255, 255);
+  background-color: #ce9a3a;
+}
+
+.unveilAllLettersButton {
+  cursor: pointer;
+  width: 100px;
+  height: 100px;
+  position: fixed;
+  font-size: 60px;
+  margin: 100px;
+  bottom: 0;
+  right: 10;
+  border-radius: 15px;
+  color: white;
+  border: 3px solid rgb(255, 255, 255);
+  background-color: #ce9a3a;
 }
 
 .App-logo {

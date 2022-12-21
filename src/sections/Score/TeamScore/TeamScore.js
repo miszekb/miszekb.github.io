@@ -1,17 +1,21 @@
-import { useState } from "react"
+import React from "react"
 
 import styles from './TeamScore.module.css';
 
-const TeamScore = props => {
-    const [ teamsScore, setTeamsScore ] = useState(0);
+const avatars = {
+    Bałwany: 'balwany@2x.png',
+    Gwiazdki: 'gwiazdki@2x.png',
+    Renifery: 'renifery@2x.png'
+}
 
-    return <div className={styles.teamContainer}>
+const TeamScore = props => {
+    return <div onClick={() => props.onClick(props.name)} className={`${styles.teamContainer} ${props.name !== props.activeTeamName && styles.fadedOut}`}>
         <div className={styles.teamAvatar}>
-            <img src="https://previews.123rf.com/images/jpgon/jpgon1411/jpgon141100521/33774351-illustration-of-a-cute-star-avatar-wearing-glasses.jpg"/>
+            <img src={avatars[props.name]} />
         </div>
         <div className={styles.scoreInput}>
             <div className={styles.teamName}>{props.name}</div>
-            {teamsScore}
+            <input type="text"/>
         </div>
     </div>
 }

@@ -1,57 +1,30 @@
+import { useEffect, useState } from 'react';
+import FakeLetterRow from './FakerLetterRow';
+import Letter from './Letter/Letter';
 import styles from './Letters.module.css';
 
 const Letters = props => {
+    const [currentWordLetters, setCurrentWordLetters] = useState([]);
+
+    useEffect(() => {
+        const words = props.word.split(' ');
+        setCurrentWordLetters(words);
+    }, [props.word]);
+
     return <div className={styles.lettersContainer}>
-        <div className={styles.lettersRow}>
-            <div className={`${styles.letterCard} ${styles.unactive}`} />
-            <div className={`${styles.letterCard} ${styles.unactive}`} />
-            <div className={`${styles.letterCard} ${styles.unactive}`} />
-            <div className={`${styles.letterCard} ${styles.unactive}`} />
-            <div className={`${styles.letterCard} ${styles.unactive}`} />
-            <div className={`${styles.letterCard} ${styles.unactive}`} />
-            <div className={`${styles.letterCard} ${styles.unactive}`} />
-            <div className={`${styles.letterCard} ${styles.unactive}`} />
-            <div className={`${styles.letterCard} ${styles.unactive}`} />
-        </div>
-        <div className={styles.lettersRow}>
-            <div className={`${styles.letterCard} ${styles.unactive}`} />
-            <div className={`${styles.letterCard} ${styles.unactive}`} />
-            <div className={`${styles.letterCard} ${styles.unactive}`} />
-            <div className={`${styles.letterCard} ${styles.active}`} />
-            <div className={`${styles.letterCard} ${styles.active}`} />
-            <div className={`${styles.letterCard} ${styles.active}`} />
-            <div className={`${styles.letterCard} ${styles.active}`} />
-            <div className={`${styles.letterCard} ${styles.active}`} />
-            <div className={`${styles.letterCard} ${styles.active}`} />
-            <div className={`${styles.letterCard} ${styles.unactive}`} />
-            <div className={`${styles.letterCard} ${styles.unactive}`} />
-            <div className={`${styles.letterCard} ${styles.unactive}`} />
-        </div>
-        <div className={styles.lettersRow}>
-            <div className={`${styles.letterCard} ${styles.unactive}`} />
-            <div className={`${styles.letterCard} ${styles.unactive}`} />
-            <div className={`${styles.letterCard} ${styles.unactive}`} />
-            <div className={`${styles.letterCard} ${styles.active}`} />
-            <div className={`${styles.letterCard} ${styles.active}`} />
-            <div className={`${styles.letterCard} ${styles.active}`} />
-            <div className={`${styles.letterCard} ${styles.active}`} />
-            <div className={`${styles.letterCard} ${styles.active}`} />
-            <div className={`${styles.letterCard} ${styles.active}`} />
-            <div className={`${styles.letterCard} ${styles.unactive}`} />
-            <div className={`${styles.letterCard} ${styles.unactive}`} />
-            <div className={`${styles.letterCard} ${styles.unactive}`} />
-        </div>
-        <div className={styles.lettersRow}>
-        <div className={`${styles.letterCard} ${styles.unactive}`} />
-            <div className={`${styles.letterCard} ${styles.unactive}`} />
-            <div className={`${styles.letterCard} ${styles.unactive}`} />
-            <div className={`${styles.letterCard} ${styles.unactive}`} />
-            <div className={`${styles.letterCard} ${styles.unactive}`} />
-            <div className={`${styles.letterCard} ${styles.unactive}`} />
-            <div className={`${styles.letterCard} ${styles.unactive}`} />
-            <div className={`${styles.letterCard} ${styles.unactive}`} />
-            <div className={`${styles.letterCard} ${styles.unactive}`} />
-        </div>
+            {currentWordLetters.map(word => {
+                console.log('WORD: ', word);
+                return <>
+                    <div className={styles.lettersRow}>
+                    {word.split('').map((letter, index) => <Letter
+                        letter={letter}
+                        unveiledLetters={props.unveiledLetters}
+                        key={index + letter + props.questionIndex}
+                    />)}
+                    </div>
+                </>
+            })
+            }
     </div>
 }
 

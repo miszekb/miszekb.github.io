@@ -1,12 +1,14 @@
 .categoryContainer {
     margin: auto;
     margin-top: 400px;
+    transition: 1s;
 }
 
 .activated {
     transition: 1s;
     margin-top: 100px;
     position: inherit;
+    margin-bottom: 400px;
 }
 
 .categoryBar {
